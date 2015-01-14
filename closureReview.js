@@ -11,6 +11,8 @@ var callFriend = function(){
 
   //code here
 
+var makeCall = callFriend();
+console.log(makeCall('435-215-9248'));
 
 
 /*
@@ -20,3 +22,19 @@ Write a function that accepts a function as it's only argument and returns a new
 Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
 
 */
+
+//pass to stop
+var hello = function() {
+	console.log('Hello');
+};
+
+var stop = function(func, timesToExecute) {
+	return function () {
+		if (timesToExecute > 0) {
+			func();
+			timesToExecute--;	
+		} else {
+			console.log('STAHHP');
+		}
+	}
+};
