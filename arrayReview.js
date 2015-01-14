@@ -3,8 +3,10 @@ var threeItems = [1,2,3];
 //alert the result of your function
 
   //code here
-
-
+var last = function(arr) {
+	return (arr[arr.length - 1]);
+}
+alert(last(threeItems));
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -14,7 +16,11 @@ var threeItems = [1,2,3];
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
   //code here
-
+for (i = evenArray.length - 1; i >= 0; i--) {
+	if (evenArray[i] % 2 !== 0) {
+		evenArray.splice(i, 1);
+	}
+};
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -27,7 +33,11 @@ var getRandomArbitrary = function() {
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
   //code here
-
+var findRandom = function(arr) {
+	var rand = getRandomArbitrary();
+	// console.log(rand);
+	return (arr.indexOf(rand) !== -1);
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -38,7 +48,8 @@ var first = [1,2,3,4,5];
 var second;
 
   //code here
-
+second = first.slice(0);
+second.push(6,7);
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
 
@@ -52,7 +63,16 @@ alert(second) //[1,2,3,4,5,6,7];
 var sentence = "Dev Mountain is the best"
 
   //code here
-
+var longest = function(str) {
+	var arr = str.split(' ');
+	longWord = arr[0];
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].length > longWord.length) {
+			longWord = arr[i];
+		}
+	}
+	return longWord;
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -63,7 +83,13 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
   //code here
-
+var capitalize = function(str) {
+	var manipArr = str.split(' ');
+	for (var i = 0; i < manipArr.length; i++) {
+		manipArr[i] = manipArr[i].split('').shift().toUpperCase() + manipArr[i].split('').slice(1).join('').toLowerCase();
+	}
+	return manipArr.join(' '); 
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -72,3 +98,14 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+var vowelCounter = function(str) {
+	totalVowels = 0;
+	vowels = ['a', 'e', 'i', 'o', 'u'];
+	for (i = 0; i < str.length; i++) {
+		if (vowels.indexOf(str[i].toLowerCase()) !== -1) {
+			totalVowels++;
+		}
+	}
+	return totalVowels;
+};
