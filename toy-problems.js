@@ -7,7 +7,13 @@ Write a function that takes an array of integers and returns the sum of the inte
 plusOneSum([1, 2, 3, 4]); // 14
 
 */
-
+var plusOneSum = function(arr) {
+	total = 0;
+	for (i = 0; i < arr.length; i++) {
+		total += (++arr[i]);
+	}
+	return total;
+};
 
 
 /*
@@ -18,6 +24,20 @@ flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 
 */
 
+//TODO make this work somehow
+
+/*var flatten = function(mdArr) {
+	
+	//loop through array
+	for (var i = 0; i < mdArr.length; i++) {
+		if (Array.isArray(mdArr[i])) {
+			var arrInner = mdArr[i];
+			flatten(arrInner);
+
+		}
+		
+	}
+};*/
 
 
 /*
